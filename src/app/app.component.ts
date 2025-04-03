@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Recipe';
+  pageView='recipe';
+  onChangePage(event:string){
+    this.pageView=event;
+  }
 }

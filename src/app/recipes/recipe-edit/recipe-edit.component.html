@@ -1,0 +1,113 @@
+<div class="row">
+    <div class="col-12">
+        <form [formGroup]="recipeform" (ngSubmit)="onSubmit()">
+        <div class="row mb-3">
+          <div class="col-12">
+            <button type="submit" class="btn btn-success" [disabled]="!recipeform.valid">{{isEdit?'Update':'Save'}}</button>
+            <!-- <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button> -->
+            <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                formControlName="name">
+            </div>
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="imagePath" class="form-label">Image URL</label>
+              <input
+                type="text"
+                id="imagePath"              
+                class="form-control"
+                formControlName="imagePath"
+                #imgPath
+              >
+            </div>
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-12">
+            <img [src]="imgPath.value" class="img-fluid">          
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea
+                id="description"
+                class="form-control"   
+                rows="6"
+                formControlName="description"
+                ></textarea>
+            </div>
+          </div>
+        </div>
+  
+        <!-- <div class="row mb-3">
+          <div class="col-12" formArrayName="ingredients">
+            <div
+              class="row align-items-center mb-2"
+              *ngFor="let ingredientCtrl of recipeControls; let i = index"
+              [formGroupName]="i">
+              <div class="col-8">
+                <input type="text" class="form-control" formControlName="name">
+              </div>
+              <div class="col-2">
+                <input type="number" class="form-control" formControlName="amount">
+              </div>
+              <div class="col-2">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  (click)="onDeleteIngredient(i)">X</button>
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="col-12">
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  (click)="onAddIngredient()">Add Ingredient</button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+         <div class="row mb-3">
+          <div class="col-12" formArrayName="ingredients">
+            <div class="row align-items-center mb-2" *ngFor="let ingredientCtrl of recipeControls; let i = index" [formGroupName]="i">
+              <div class="col-8">
+                <input type="text" class="form-control" formControlName="name">
+              </div>
+              <div class="col-2">
+                <input type="number" class="form-control" formControlName="amount">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-danger" (click)="onDeleteIngredient(i)">X</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button type="button" class="btn btn-success" (click)="onAddIngredient()">Add Ingredient</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

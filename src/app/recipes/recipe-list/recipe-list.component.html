@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-success" (click)="OnRecipeAdd()">New Recipe</button>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-12">
+        <!-- <app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe" (recipeSelect)="OnRecipeSelected(recipe)"></app-recipe-item> -->
+        <app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe"></app-recipe-item>
+      </div>
+    </div>
+  </div>
+  
