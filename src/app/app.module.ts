@@ -1,43 +1,27 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { HeaderComponent } from './header/header.component';
-import { DropdownDirectivesDirective } from './_directives/dropdown-directives.directive';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-
-
+import { AuthComponent } from './auth/auth.component';
+import { LoaderComponent } from './shared/loader/loader.component';
+import { RecipeModule } from './recipes/recipe-detail/recipe.module';
+import { ShoppingModule } from './shopping-list/shopping.module';
+import { SharedModule } from './shared/shared.module';
+import { InterceptorModule } from './_interceptor/interceptor.module';
 @NgModule({
   declarations: [
     AppComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeItemComponent,
-    RecipeDetailComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
     HeaderComponent,
-    DropdownDirectivesDirective,
-    RecipeStartComponent,
-    RecipeEditComponent,
-
+    AuthComponent,
+    LoaderComponent
   ],
   imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RecipeModule,
+    ShoppingModule,
+    SharedModule,
+    InterceptorModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
