@@ -1,32 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { SharedRoutingModule } from './shared-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownDirectivesDirective } from '../_directives/dropdown-directives.directive';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { LoaderComponent } from './loader/loader.component';
 
 
 @NgModule({
   declarations: [
-    DropdownDirectivesDirective
+    DropdownDirectivesDirective,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
-    BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
-    SharedRoutingModule
+    ReactiveFormsModule
   ],
   exports:[
     CommonModule,
     HttpClientModule,
-    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    DropdownDirectivesDirective
+    DropdownDirectivesDirective,
+    LoaderComponent
   ]
 })
 export class SharedModule { }
